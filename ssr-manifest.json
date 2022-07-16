@@ -1,0 +1,26 @@
+{
+  "vite/modulepreload-polyfill": [],
+  "vite/preload-helper": [],
+  "node_modules/.pnpm/@vue+shared@3.2.37/node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+reactivity@3.2.37/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+runtime-core@3.2.37/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/.pnpm/@vue+runtime-dom@3.2.37/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/.pnpm/vue-router@4.1.2_vue@3.2.37/node_modules/vue-router/dist/vue-router.mjs": [],
+  "node_modules/.pnpm/@vueuse+head@0.7.6_vue@3.2.37/node_modules/@vueuse/head/dist/index.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_gzp4g6ojpfo4spm3t4qmi2yojq/node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_gzp4g6ojpfo4spm3t4qmi2yojq/node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "node_modules/.pnpm/vite-ssg@0.20.2_gzp4g6ojpfo4spm3t4qmi2yojq/node_modules/vite-ssg/dist/index.mjs": [],
+  "src/app.vue?vue&type=style&index=0&lang.css": [],
+  "plugin-vue:export-helper": [],
+  "src/app.vue": [],
+  "src/main.ts": [],
+  "index.html": [],
+  "src/pages/home.vue?vue&type=style&index=0&scoped=true&lang.css": [
+    "/assets/home.4767cd3f.js",
+    "/assets/home.de2dcc41.css"
+  ],
+  "src/pages/home.vue": [
+    "/assets/home.4767cd3f.js",
+    "/assets/home.de2dcc41.css"
+  ]
+}
