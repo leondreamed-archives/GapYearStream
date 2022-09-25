@@ -15,12 +15,12 @@
   "src/app.vue": [],
   "src/main.ts": [],
   "index.html": [],
-  "src/pages/home.vue?vue&type=style&index=0&scoped=true&lang.css": [
-    "/assets/home.f9a36147.js",
-    "/assets/home.5cbd2681.css"
+  "src/pages/home-page.vue?vue&type=style&index=0&scoped=true&lang.css": [
+    "/assets/home-page.fd77503c.js",
+    "/assets/home-page.9349ea43.css"
   ],
-  "src/pages/home.vue": [
-    "/assets/home.f9a36147.js",
-    "/assets/home.5cbd2681.css"
+  "src/pages/home-page.vue": [
+    "/assets/home-page.fd77503c.js",
+    "/assets/home-page.9349ea43.css"
   ]
 }
