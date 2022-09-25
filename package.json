@@ -7,6 +7,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@actions/core": "^1.9.1",
 		"cheerio": "1.0.0-rc.12",
 		"dotenv": "^16.0.2",
 		"es-main": "^1.2.0",
