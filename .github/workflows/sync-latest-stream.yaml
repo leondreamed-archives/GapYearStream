@@ -17,7 +17,7 @@ jobs:
           current_livestream_video_id=$(curl -s https://gapyearstream.com/current-livestream-video-id)
           newest_livestream_video_id=$(curl -s https://www.youtube.com/channel/UCevgC7xkuvSWEvA9tLV9XBg/live | sed -n 's/.*<link rel="canonical" href="\([^"]*\)">.*/\1/p' | sed -n 's/.*watch\?v=\(.*\)/\1/p')
 
-          if [ $current_livestream_video_id = $newest_livestream_video_id ];
+          if [ "$current_livestream_video_id" == "$newest_livestream_video_id" ];
           then
             echo "::set-output name=UP_TO_DATE::1"
           else
@@ -28,7 +28,7 @@ jobs:
     name: Updates the site if stream updated
     runs-on: ubuntu-latest
     needs: check-stream-updated
-    if: needs.check-stream-updated.outputs.up-to-date == '0'
+    if: needs.check_stream-updated.outputs.UP_TO_DATE == '0'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
