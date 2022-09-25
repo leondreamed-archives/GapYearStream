@@ -1,14 +1,34 @@
 name: Get Latest Stream Workflow
 
 on:
+  schedule:
+    - cron: '*/5 * * * *'
   push:
     branches:
       - main
 
 jobs:
-  deploy:
+  check-stream-updated:
     runs-on: ubuntu-latest
+    outputs:
+      up-to-date: ${{ steps.stream-changed.up-to-date }}
+    steps:
+      - name: Check if stream changed
+        id: stream-changed
+        run: |
+          current_livestream_video_id=$(curl -s https://gapyearstream.com/current-livestream-video-id)
+          newest_livestream_video_id=$(curl -s https://www.youtube.com/channel/UCevgC7xkuvSWEvA9tLV9XBg/live | sed -n 's/.*<link rel="canonical" href="\([^"]*\)">.*/\1/p' | sed -n 's/.*watch\?v=\(.*\)/\1/p')
 
+          if [ current_livestream_video_id = newest_livestream_video_id ];
+          then
+            echo "::set-output name=UP_TO_DATE::1"
+          else
+            echo "::set-output name=UP_TO_DATE::0"
+          fi
+
+  update-site:
+    runs-on: ubuntu-latest
+    if: check-stream-updated.outputs.up-to-date == '0'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -31,15 +51,10 @@ jobs:
         with:
           version: latest
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Check if stream changed
-        id: stream-changed
-        run: pnpm exec node-ts ./scripts/check-if-stream-changed.ts
+      - name: Install dependencies and build frontend
+        run: pnpm install && pnpm build
 
       - name: Deploy to GitHub Pages 🚀
-        if: steps.stream-changed.outputs.stream-changed == 'true'
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages

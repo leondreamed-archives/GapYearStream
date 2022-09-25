@@ -23,7 +23,7 @@ export default defineConfig({
 		}),
 		{
 			name: 'write-latest-livestream-video-id',
-			generateBundle() {
+			buildStart() {
 				fs.writeFileSync(
 					join(import.meta.url, 'public/current-livestream-video-id'),
 					latestLivestreamVideoId
