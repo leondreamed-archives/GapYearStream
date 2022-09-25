@@ -31,7 +31,7 @@ jobs:
     name: Updates the site if stream updated
     runs-on: ubuntu-latest
     needs: check-stream-updated
-    if: check-stream-updated.outputs.up-to-date == '0'
+    if: needs.check-stream-updated.outputs.up-to-date == '0'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
