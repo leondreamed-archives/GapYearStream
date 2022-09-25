@@ -17,6 +17,9 @@ jobs:
           current_livestream_video_id=$(curl -s https://gapyearstream.com/current-livestream-video-id)
           newest_livestream_video_id=$(curl -s https://www.youtube.com/channel/UCevgC7xkuvSWEvA9tLV9XBg/live | sed -n 's/.*<link rel="canonical" href="\([^"]*\)">.*/\1/p' | sed -n 's/.*watch\?v=\(.*\)/\1/p')
 
+          echo "Current: $current_livestream_video_id"
+          echo "Newest: $newest_livestreams_video_id"
+
           if [ "$current_livestream_video_id" = "$newest_livestream_video_id" ];
           then
             echo "::set-output name=UP_TO_DATE::1"
