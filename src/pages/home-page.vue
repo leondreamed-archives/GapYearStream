@@ -1,7 +1,7 @@
 <template>
 	<iframe
 		class="livestream-iframe"
-		src="https://www.youtube.com/embed/Oc4edGQFdjY?autoplay=1&mute=1"
+		src="https://www.youtube.com/embed/__CURRENT_LIVESTREAM_VIDEO_ID__?autoplay=1&mute=1"
 		frameborder="0"
 		allowfullscreen
 	></iframe>

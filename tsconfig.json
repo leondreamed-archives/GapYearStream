@@ -1,4 +1,7 @@
 {
 	"extends": "lionconfig/tsconfig",
+	"compilerOptions": {
+		"target": "ES2022"
+	},
 	"include": ["src"]
 }
